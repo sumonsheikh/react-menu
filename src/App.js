@@ -7,9 +7,12 @@ import data from './data';
 import Menu from './Menu';
 import Categories from './Categories';
 
+const allCategories = ['all', ...new Set(data.map((item) => item.category))];
+console.log(allCategories);
+
 function App() {
   const [menuItems, setMenuItems] = useState(data);
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState(allCategories);
 
   const filterCategories = (category)=>{
     if(category == 'all'){
@@ -28,7 +31,7 @@ function App() {
           <h2>Our Menu</h2>
           <div className="underline"></div>
         </div>
-        <Categories filterCategories ={filterCategories}/>
+        <Categories categories={categories} filterCategories ={filterCategories}/>
         <Menu items={menuItems}/>
     </section>
   );
