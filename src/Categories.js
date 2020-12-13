@@ -1,8 +1,11 @@
 import React from 'react';
 
-const Categories = () => {
+const Categories = ({filterCategories}) => {
     return (
-        <div>
+        <div className="btn-container">
+            <button className="btn-filter" onClick={() =>filterCategories('breakfast')}>
+                Breakfast
+            </button>
             
         </div>
     )

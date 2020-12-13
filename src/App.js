@@ -10,13 +10,20 @@ import Categories from './Categories';
 function App() {
   const [menuItems, setMenuItems] = useState(data);
   const [categories, setCategories] = useState([]);
+  const filterCategories = (category)=>{
+    const newCategory = data.filter((item) =>
+      item.category === category)
+    console.log(newCategory);
+    setMenuItems(newCategory);
+  };
+
   return (
     <section className="menu section">
         <div className="title">
           <h2>Our Menu</h2>
           <div className="underline"></div>
         </div>
-        <Categories/>
+        <Categories filterCategories ={filterCategories}/>
         <Menu items={menuItems}/>
     </section>
   );
