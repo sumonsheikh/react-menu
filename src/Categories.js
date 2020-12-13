@@ -3,6 +3,9 @@ import React from 'react';
 const Categories = ({filterCategories}) => {
     return (
         <div className="btn-container">
+            <button className="btn-filter" onClick={() =>filterCategories('all')}>
+                All
+            </button>
             <button className="btn-filter" onClick={() =>filterCategories('breakfast')}>
                 Breakfast
             </button>

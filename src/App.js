@@ -10,7 +10,12 @@ import Categories from './Categories';
 function App() {
   const [menuItems, setMenuItems] = useState(data);
   const [categories, setCategories] = useState([]);
+
   const filterCategories = (category)=>{
+    if(category == 'all'){
+      setMenuItems(data);
+      return;
+    }
     const newCategory = data.filter((item) =>
       item.category === category)
     console.log(newCategory);
