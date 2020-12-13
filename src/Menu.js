@@ -8,14 +8,14 @@ const Menu = ({items}) =>{
             {items.map((menuItem) =>{
                 const{id,title,img,price,desc} = menuItem;
                 return(
-                    <article key={id} className="menu-item">
+                    <div key={id} className="menu-item">
                         <img src={img} alt={title} className="photo"/>
-                        <header className="item-ifo">
+                        <header className="item-info">
                             <h4 >{title}</h4>
                             <h4 className="item-price">${price}</h4>
                         </header>
                         <p className="item-text">{desc}</p>
-                    </article>
+                    </div>
                 )
             })}
         </div>
